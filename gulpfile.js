@@ -29,14 +29,6 @@ gulp.task('minify-js', function () {
     .pipe(gulp.dest(destination + '/js/'));
 });
 
-// plugin custom scrollbar
-gulp.task('minify-customscrollbar', function () {
-    gulp.src('./components/perfect-scrollbar/js/*.js') // path to your files
-    .pipe(uglify())
-    .pipe(plugins.rename({suffix: '.min'}))
-    .pipe(gulp.dest('./components/perfect-scrollbar/js/minify/'));
-});
-
 // Tâche "watch" = je surveille *sass
 gulp.task('watch', function () {
   gulp.watch(source + '/_css/*.scss', ['minify-css']);
